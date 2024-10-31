@@ -24,14 +24,12 @@ https://open.one-api.club/taobao/app/taobao/query
 | -------- | ------ | -------- | -------------------- |
 | `api_key`  | string   | 是       | 请求密钥       |
 | `img_src`  | string   | 是       | 图片链接       |
-| `page`   | int    | 否       | 分页参数，默认为1    |
 
 ## 请求示例
 
 ```bash
 curl -X POST "https://open.one-api.club/taobao/app/taobao/query" \
 -F "img_src=https://img.ithome.com/newsuploadfiles/thumbnail/2024/10/806000_240.jpg" \
--F "page=1"
 ```
 
 ## 响应参数
@@ -40,48 +38,89 @@ curl -X POST "https://open.one-api.club/taobao/app/taobao/query" \
 | ------------ | ------ | -------------------- |
 | `errcode`       | int    | 响应状态码           |
 | `errmsg`    | string | 响应信息             |
-| `results`       | array  | 商品列表             |
+| `data`       | array  | 响应数据             |
 
 ## 响应示例
 
 ```json
 {
-  "errcode": 0,
-  "errmsg": "Success",
-  "results": [
-      {
-      "RankScore": "0.8553",
-      "Result": {
-          "CategoryName": "无线/蓝牙音箱",
-          "CommissionRate": "45",
-          "CouponAmount": 0,
-          "CouponEndTime": "",
-          "CouponInfo": "",
-          "CouponRemainCount": 0,
-          "CouponStartFee": "",
-          "CouponStartTime": "",
-          "CouponTotalCount": "",
-          "ItemId": "pvkb27vI3f6xVWXrMZhgy3tptm-vVbNx0sB7pMo7grIOo",
-          "LevelOneCategoryName": "影音电器",
-          "MaxCommission": [
-
-          ],
-          "Nick": "",
-          "PicUrl": "https://img.alicdn.com/i1/2586909304/O1CN01eNA59K2IbHyFtimbS_!!2586909304.jpg",
-          "PriceAfterCoupon": "2199.00",
-          "Provcity": "江苏 南京",
-          "ReservePrice": "2999.00",
-          "SellerId": "2586909304",
-          "ShopTitle": "千冠数码",
-          "ShortTitle": "哈曼卡顿琉璃4礼物家用氛围灯",
-          "SubTitle": "",
-          "Title": "哈曼卡顿音响琉璃4四代无线蓝牙音箱礼物家用透明音响小型琉璃3代",
-          "UserType": 0,
-          "Volume": 1,
-          "ZkFinalPrice": "2199"
-          }
-      },
-  ]
+    "code": 0,
+    "data": {
+        "auctions": [
+            {
+                "rankScore": 0.8496,
+                "result": {
+                    "categoryName": null,
+                    "commissionRate": null,
+                    "couponAmount": null,
+                    "couponEndTime": null,
+                    "couponInfo": null,
+                    "couponRemainCount": null,
+                    "couponShareUrl": null,
+                    "couponStartFee": null,
+                    "couponStartTime": null,
+                    "couponTotalCount": null,
+                    "deeplinkCouponShareUrl": null,
+                    "deeplinkUrl": null,
+                    "itemId": null,
+                    "levelOneCategoryName": null,
+                    "maxCommission": {
+                        "maxCommissionClickUrl": null,
+                        "maxCommissionCouponShareUrl": null,
+                        "maxCommissionRate": null
+                    },
+                    "nick": null,
+                    "picUrl": "//img.alicdn.com/i1/2586909304/O1CN01eNA59K2IbHyFtimbS_!!2586909304.jpg",
+                    "priceAfterCoupon": null,
+                    "provcity": null,
+                    "reservePrice": "2999.00",
+                    "sellerId": null,
+                    "shopTitle": null,
+                    "shortTitle": null,
+                    "subTitle": null,
+                    "title": "哈曼卡顿音响琉璃4四代无线蓝牙音箱礼物家用透明音响小型琉璃3代",
+                    "url": "//s.click.taobao.com/t?e=m%3D2%26s%3DRA%2FDM83VcC9w4vFB6t2Z2ueEDrYVVa64fCnEkYHU%2B2tyINtkUhsv0Ac%2BolCc%2BP6AIdbSor0PwI0ta6y7Ua0cznvfGz9tF%2FehschF5QF4cdxWYk9O8huMN1NeLw4Fl7JwVfjD6Fzh1ocA47Yukss720h0JfS10Z8VhqUrzb0fe4SRAtSDER15ye4n3QdQaMs1cXx4UReItycb919Cgk9g4EAdF4nYMRjS9WZxlj6WmOeT9Ms%2Fq4PU7iFq7zkcttWgIYULNg46oBA%3D&union_lens=lensId%3AOPT%401730342927%402166c589_1616_192e079bb92_40ba%4001%40eyJmbG9vcklkIjo2OTM0OH0ie",
+                    "userType": null,
+                    "volume": null,
+                    "zkFinalPrice": "2199"
+                }
+            }
+        ]
+    },
+    "message": null,
+    "picInfo": {
+        "mainRegion": {
+            "multiCategoryId": [
+                {
+                    "categoryId": "88888888",
+                    "score": 0.80823
+                },
+                {
+                    "categoryId": "22",
+                    "score": 0.12517
+                },
+                {
+                    "categoryId": "8",
+                    "score": 0.01013
+                },
+                {
+                    "categoryId": "20",
+                    "score": 0.00654
+                }
+            ],
+            "region": "62,179,14,174"
+        },
+        "multiRegion": [
+            {
+                "region": "62,179,14,174"
+            },
+            {
+                "region": "62,179,14,174"
+            }
+        ]
+    },
+    "requestId": "*********",
+    "success": true
 }
 ```
 
